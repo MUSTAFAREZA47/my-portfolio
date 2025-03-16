@@ -16,24 +16,24 @@ const About = () => {
                     </h2>
 
                     <p className="text-lg text-gray-300 leading-relaxed">
-                        I'm a&nbsp;
+                        I&apos;m a&nbsp;
                         <span className="text-teal-300 font-semibold">
                             MERN Stack Developer
-                        </span>&nbsp;
-                        with a strong foundation in&nbsp;
+                        </span>
+                        &nbsp; with a strong foundation in&nbsp;
                         <span className="text-teal-300 font-semibold">
                             React.js, Node.js, Express.js, and MongoDB
                         </span>
-                        . I specialize in crafting &nbsp;
+                        . I specialize in crafting&nbsp;
                         <span className="text-teal-300 font-semibold">
                             high-performance, scalable, and user-friendly web
                             applications
-                        </span>&nbsp;
-                        that deliver seamless digital experiences.
+                        </span>
+                        &nbsp; that deliver seamless digital experiences.
                     </p>
 
                     <p className="text-lg text-gray-300 leading-relaxed mt-4">
-                        With a background in &nbsp;
+                        With a background in&nbsp;
                         <span className="text-teal-300 font-semibold">
                             graphic design
                         </span>
@@ -50,13 +50,13 @@ const About = () => {
                         I&apos;m always eager to&nbsp;
                         <span className="text-teal-300 font-semibold">
                             learn new technologies
-                        </span>&nbsp;
-                        and stay ahead of industry trends. Currently, I&apos;m
-                        diving deeper into&nbsp;
+                        </span>
+                        &nbsp; and stay ahead of industry trends. Currently,
+                        I&apos;m diving deeper into&nbsp;
                         <span className="text-teal-300 font-semibold">
                             Next.js and Web3
-                        </span>&nbsp;
-                        to build the future of the web.
+                        </span>
+                        &nbsp; to build the future of the web.
                     </p>
 
                     <p className="text-lg text-gray-300 leading-relaxed mt-4">
@@ -69,7 +69,7 @@ const About = () => {
                 <div className="flex items-center justify-center md:w-1/2">
                     <Image
                         src="/about.jpg"
-                        alt="Ahmed's Image"
+                        alt="aboutImage"
                         width={450}
                         height={450}
                         priority
