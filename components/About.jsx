@@ -12,33 +12,33 @@ const About = () => {
                 {/* Left Content */}
                 <div className="text-left md:w-1/2 max-w-xl lg:p-10">
                     <h2 className="text-4xl font-bold text-teal-400 mb-10">
-                        Hey 👋 , I'm Ahmed!
+                        Hey 👋 , I&apos;m Ahmed!
                     </h2>
 
                     <p className="text-lg text-gray-300 leading-relaxed">
-                        I'm a{' '}
+                        I'm a&nbsp;
                         <span className="text-teal-300 font-semibold">
                             MERN Stack Developer
-                        </span>{' '}
-                        with a strong foundation in{' '}
+                        </span>&nbsp;
+                        with a strong foundation in&nbsp;
                         <span className="text-teal-300 font-semibold">
                             React.js, Node.js, Express.js, and MongoDB
                         </span>
-                        . I specialize in crafting{' '}
+                        . I specialize in crafting &nbsp;
                         <span className="text-teal-300 font-semibold">
                             high-performance, scalable, and user-friendly web
                             applications
-                        </span>{' '}
+                        </span>&nbsp;
                         that deliver seamless digital experiences.
                     </p>
 
                     <p className="text-lg text-gray-300 leading-relaxed mt-4">
-                        With a background in{' '}
+                        With a background in &nbsp;
                         <span className="text-teal-300 font-semibold">
                             graphic design
                         </span>
                         , I blend aesthetics and functionality in my projects.
-                        My expertise extends beyond MERN stack to include{' '}
+                        My expertise extends beyond MERN stack to include&nbsp;
                         <span className="text-teal-300 font-semibold">
                             JavaScript (ES6+), Python, Tailwind CSS,
                             Material-UI, and Next.js
@@ -47,15 +47,15 @@ const About = () => {
                     </p>
 
                     <p className="text-lg text-gray-300 leading-relaxed mt-4">
-                        I'm always eager to{' '}
+                        I&apos;m always eager to&nbsp;
                         <span className="text-teal-300 font-semibold">
                             learn new technologies
-                        </span>{' '}
+                        </span>&nbsp;
                         and stay ahead of industry trends. Currently, I&apos;m
-                        diving deeper into{' '}
+                        diving deeper into&nbsp;
                         <span className="text-teal-300 font-semibold">
                             Next.js and Web3
-                        </span>{' '}
+                        </span>&nbsp;
                         to build the future of the web.
                     </p>
 
