@@ -5,60 +5,55 @@ import { CanvasRevealEffect } from "./ui/CanvasRevealEffect";
 
 const Approach = () => {
   return (
-      <section className="w-full py-20">
-          <h1 className="heading">
-              My <span className="text-purple">approach</span>
-          </h1>
-          {/* remove bg-white dark:bg-black */}
-          <div className="my-20 flex flex-col lg:flex-row items-center justify-center w-full gap-4">
-              {/* add des prop */}
-              <Card
-                  title="Ideas, Logic, and Creativity"
-                  icon={<AceternityIcon order="Phase 1" />}
-                  des="Every project begins with a strong foundation of ideas, logical structuring, and creative vision. I start by understanding the purpose, user needs, and technical requirements. Brainstorming and planning help shape a clear roadmap while ensuring innovation and efficiency in problem-solving.
+    <section className="w-full relative">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black-100 to-black-200 opacity-50" />
+      
+      <div className="relative z-10">
+        <h1 className="heading text-center">
+          My <span className="text-purple">approach</span>
+        </h1>
 
-"
-              >
-                  <CanvasRevealEffect
-                      animationSpeed={5.1}
-                      // add these classed for the border rounded overflowing -> rounded-3xl overflow-hidden
-                      containerClassName="bg-emerald-900 rounded-3xl overflow-hidden"
-                  />
-              </Card>
-              <Card
-                  title=" Development and Problem-Solving"
-                  icon={<AceternityIcon order="Phase 2" />}
-                  des="Once the foundation is set, I focus on transforming ideas into reality by writing clean, scalable, and efficient code. I follow best practices, use the right technologies, and tackle challenges with a problem-solving mindset. Debugging, optimizing, and refining are key aspects of this phase to ensure a seamless experience."
-              >
-                  <CanvasRevealEffect
-                      animationSpeed={3}
-                      // change bg-black to bg-pink-900
-                      containerClassName="bg-pink-900 rounded-3xl overflow-hidden"
-                      colors={[
-                          // change the colors of the
-                          [255, 166, 158],
-                          [221, 255, 247],
-                      ]}
-                      dotSize={2}
-                  />
-                  {/* Radial gradient for the cute fade */}
-                  {/* remove this one */}
-                  {/* <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" /> */}
-              </Card>
-              <Card
-                  title="Execution and Deployment"
-                  icon={<AceternityIcon order="Phase 3" />}
-                  des="The final phase is about bringing everything together. I test the project thoroughly for performance, security, and usability. Once ready, I deploy the application, ensuring it runs smoothly. Post-launch, I focus on improvements, updates, and user feedback to maintain a high-quality product."
-              >
-                  <CanvasRevealEffect
-                      animationSpeed={3}
-                      containerClassName="bg-sky-600 rounded-3xl overflow-hidden"
-                      colors={[[125, 211, 252]]}
-                  />
-              </Card>
-          </div>
-      </section>
-  )
+        <div className="my-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+          <Card
+            title="Ideas, Logic, and Creativity"
+            icon={<AceternityIcon order="Phase 1" />}
+            des="Every project begins with a strong foundation of ideas, logical structuring, and creative vision. I start by understanding the purpose, user needs, and technical requirements. Brainstorming and planning help shape a clear roadmap while ensuring innovation and efficiency in problem-solving."
+          >
+            <CanvasRevealEffect
+              animationSpeed={5.1}
+              containerClassName="bg-emerald-900 rounded-3xl overflow-hidden"
+            />
+          </Card>
+
+          <Card
+            title="Development and Problem-Solving"
+            icon={<AceternityIcon order="Phase 2" />}
+            des="Once the foundation is set, I focus on transforming ideas into reality by writing clean, scalable, and efficient code. I follow best practices, use the right technologies, and tackle challenges with a problem-solving mindset. Debugging, optimizing, and refining are key aspects of this phase."
+          >
+            <CanvasRevealEffect
+              animationSpeed={3}
+              containerClassName="bg-pink-900 rounded-3xl overflow-hidden"
+              colors={[[255, 166, 158], [221, 255, 247]]}
+              dotSize={2}
+            />
+          </Card>
+
+          <Card
+            title="Execution and Deployment"
+            icon={<AceternityIcon order="Phase 3" />}
+            des="The final phase is about bringing everything together. I test the project thoroughly for performance, security, and usability. Once ready, I deploy the application, ensuring it runs smoothly. Post-launch, I focus on improvements, updates, and user feedback to maintain a high-quality product."
+          >
+            <CanvasRevealEffect
+              animationSpeed={3}
+              containerClassName="bg-sky-600 rounded-3xl overflow-hidden"
+              colors={[[125, 211, 252]]}
+            />
+          </Card>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Approach;
@@ -67,7 +62,6 @@ const Card = ({
   title,
   icon,
   children,
-  // add this one for the desc
   des,
 }: {
   title: string;
@@ -76,32 +70,27 @@ const Card = ({
   des: string;
 }) => {
   const [hovered, setHovered] = React.useState(false);
+  
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      // change h-[30rem] to h-[35rem], add rounded-3xl
-      className="border border-black/[0.2] group/canvas-card flex items-center justify-center
-       dark:border-white/[0.2]  max-w-sm w-full mx-auto p-4 relative lg:h-[35rem] rounded-3xl "
-      style={{
-        //   add these two
-        //   you can generate the color from here https://cssgradient.io/
-        background: "rgb(4,7,29)",
-        backgroundColor:
-          "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
-      }}
+      className="group/canvas-card relative h-[35rem] w-full rounded-3xl border border-purple/20 bg-black-100/50 backdrop-blur-sm p-4 transition-all duration-300 hover:border-purple/50"
     >
-      {/* change to h-10 w-10 , add opacity-30  */}
-      <Icon className="absolute h-10 w-10 -top-3 -left-3 dark:text-white text-black opacity-30" />
-      <Icon className="absolute h-10 w-10 -bottom-3 -left-3 dark:text-white text-black opacity-30" />
-      <Icon className="absolute h-10 w-10 -top-3 -right-3 dark:text-white text-black opacity-30" />
-      <Icon className="absolute h-10 w-10 -bottom-3 -right-3 dark:text-white text-black opacity-30" />
+      <Icon className="absolute h-8 w-8 -top-3 -left-3 text-purple/30" />
+      <Icon className="absolute h-8 w-8 -bottom-3 -left-3 text-purple/30" />
+      <Icon className="absolute h-8 w-8 -top-3 -right-3 text-purple/30" />
+      <Icon className="absolute h-8 w-8 -bottom-3 -right-3 text-purple/30" />
 
       <AnimatePresence>
         {hovered && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             className="h-full w-full absolute inset-0"
           >
             {children}
@@ -109,75 +98,48 @@ const Card = ({
         )}
       </AnimatePresence>
 
-      <div className="relative z-20 px-10">
-        <div
-          // add this for making it center
-          // absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]
-          className="text-center group-hover/canvas-card:-translate-y-4 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] 
-        group-hover/canvas-card:opacity-0 transition duration-200 min-w-40 mx-auto flex items-center justify-center"
+      <div className="relative z-20 flex flex-col items-center justify-center h-full px-6">
+        <motion.div
+          initial={{ opacity: 1, y: 0 }}
+          animate={{ opacity: hovered ? 0 : 1, y: hovered ? -20 : 0 }}
+          transition={{ duration: 0.3 }}
+          className="mb-8"
         >
           {icon}
-        </div>
-        <h2
-          // change text-3xl, add text-center
-          className="dark:text-white text-center text-3xl opacity-0 group-hover/canvas-card:opacity-100
-         relative z-10 text-black mt-4  font-bold group-hover/canvas-card:text-white 
-         group-hover/canvas-card:-translate-y-2 transition duration-200"
+        </motion.div>
+
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: hovered ? 1 : 0, y: hovered ? 0 : 20 }}
+          transition={{ duration: 0.3 }}
+          className="text-2xl md:text-3xl font-bold text-center text-white mb-4"
         >
           {title}
-        </h2>
-        {/* add this one for the description */}
-        <p
-          className="text-sm opacity-0 group-hover/canvas-card:opacity-100
-         relative z-10 mt-4 group-hover/canvas-card:text-white text-center
-         group-hover/canvas-card:-translate-y-2 transition duration-200"
-          style={{ color: "#E4ECFF" }}
+        </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: hovered ? 1 : 0, y: hovered ? 0 : 20 }}
+          transition={{ duration: 0.3, delay: 0.1 }}
+          className="text-sm md:text-base text-white/80 text-center leading-relaxed"
         >
           {des}
-        </p>
+        </motion.p>
       </div>
-    </div>
+    </motion.div>
   );
 };
-// add order prop for the Phase number change
+
 const AceternityIcon = ({ order }: { order: string }) => {
   return (
-    <div>
-      {/* this btn is from https://ui.aceternity.com/components/tailwindcss-buttons border magic */}
-      {/* change rounded-lg, text-purple px-5 py-2 */}
-      {/* remove focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 cuz we don't need to focus */}
-      {/* remove text-sm font-medium h-12 , add font-bold text-2xl */}
-      <button className="relative inline-flex overflow-hidden rounded-full p-[1px] ">
-        <span
-          className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite]
-         bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]"
-        />
-        <span
-          className="inline-flex h-full w-full cursor-pointer items-center 
-        justify-center rounded-full bg-slate-950 px-5 py-2 text-purple backdrop-blur-3xl font-bold text-2xl"
-        >
+    <div className="relative">
+      <button className="relative inline-flex overflow-hidden rounded-full p-[1px]">
+        <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+        <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-black-100 px-5 py-2 text-purple backdrop-blur-3xl font-bold text-xl md:text-2xl">
           {order}
         </span>
       </button>
     </div>
-    // remove the svg and add the button
-    // <svg
-    //   width="66"
-    //   height="65"
-    //   viewBox="0 0 66 65"
-    //   fill="none"
-    //   xmlns="http://www.w3.org/2000/svg"
-    //   className="h-10 w-10 text-black dark:text-white group-hover/canvas-card:text-white "
-    // >
-    //   <path
-    //     d="M8 8.05571C8 8.05571 54.9009 18.1782 57.8687 30.062C60.8365 41.9458 9.05432 57.4696 9.05432 57.4696"
-    //     stroke="currentColor"
-    //     strokeWidth="15"
-    //     strokeMiterlimit="3.86874"
-    //     strokeLinecap="round"
-    //     style={{ mixBlendMode: "darken" }}
-    //   />
-    // </svg>
   );
 };
 

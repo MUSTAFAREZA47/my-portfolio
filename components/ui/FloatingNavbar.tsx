@@ -7,7 +7,10 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { FaDownload } from "react-icons/fa";
+import { HiMenu, HiX } from "react-icons/hi";
 
 export const FloatingNav = ({
   navItems,
@@ -21,17 +24,14 @@ export const FloatingNav = ({
   className?: string;
 }) => {
   const { scrollYProgress } = useScroll();
-
-  // set true for the initial state so that nav bar is visible in the hero section
   const [visible, setVisible] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
-    // Check if current is not undefined and is a number
     if (typeof current === "number") {
       let direction = current! - scrollYProgress.getPrevious()!;
 
       if (scrollYProgress.get() < 0.05) {
-        // also set true for the initial state
         setVisible(true);
       } else {
         if (direction < 0) {
@@ -42,6 +42,25 @@ export const FloatingNav = ({
       }
     }
   });
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offset = 100; // Adjust this value based on your navbar height
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+    setIsOpen(false);
+  };
 
   return (
     <AnimatePresence mode="wait">
@@ -58,10 +77,7 @@ export const FloatingNav = ({
           duration: 0.2,
         }}
         className={cn(
-          // change rounded-full to rounded-lg
-          // remove dark:border-white/[0.2] dark:bg-black bg-white border-transparent
-          // change  pr-2 pl-8 py-2 to px-10 py-5
-          "flex max-w-fit md:min-w-[70vw] lg:min-w-fit fixed z-[5000] top-10 inset-x-0 mx-auto px-10 py-5 rounded-lg border border-black/.1 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] items-center justify-center space-x-4",
+          "flex max-w-fit md:min-w-[70vw] lg:min-w-fit fixed z-[5000] top-10 inset-x-0 mx-auto px-6 py-4 rounded-lg border border-black/.1 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] items-center justify-between",
           className
         )}
         style={{
@@ -71,26 +87,88 @@ export const FloatingNav = ({
           border: "1px solid rgba(255, 255, 255, 0.125)",
         }}
       >
-        {navItems.map((navItem: any, idx: number) => (
-          <Link
-            key={`link=${idx}`}
-            href={navItem.link}
-            scroll={false}
-            className={cn(
-              "relative dark:text-neutral-50 items-center  flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
-            )}
-          >
-            <span className="block sm:hidden">{navItem.icon}</span>
-            {/* add !cursor-pointer */}
-            {/* remove hidden sm:block for the mobile responsive */}
-            <span className=" text-sm !cursor-pointer">{navItem.name}</span>
+        {/* Logo */}
+        <div className="flex items-center mr-10">
+          <Link href="/" className="flex items-center gap-2">
+            <div className="relative w-16 h-16">
+              <Image
+                src="/ahmed.png"
+                alt="Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
           </Link>
-        ))}
-        {/* remove this login btn */}
-        {/* <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
-          <span>Login</span>
-          <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
-        </button> */}
+        </div>
+
+        {/* Desktop Navigation Links */}
+        <div className="hidden md:flex items-center space-x-8">
+          {navItems.map((navItem: any, idx: number) => (
+            <button
+              key={`link=${idx}`}
+              onClick={() => scrollToSection(navItem.link.replace('#', ''))}
+              className={cn(
+                "relative text-neutral-50 hover:text-purple transition-colors duration-300 text-sm font-medium"
+              )}
+            >
+              <span className="text-sm !cursor-pointer">{navItem.name}</span>
+            </button>
+          ))}
+        </div>
+
+        {/* Desktop Resume Button */}
+        <a
+          href="https://drive.google.com/file/d/1NIY-4JpkFc5nZP47hcC2-4b2KQpy2T6P/view?usp=sharing"
+          target="_blank"
+          className="hidden md:flex items-center gap-2 px-4 py-2 ml-10 rounded-full bg-purple/10 hover:bg-purple/20 text-purple transition-all duration-300"
+        >
+          <FaDownload className="w-4 h-4" />
+          <span className="text-sm font-medium">Resume</span>
+        </a>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={toggleMenu}
+          className="md:hidden text-white p-2 hover:text-purple transition-colors duration-300"
+          aria-label="Toggle menu"
+        >
+          {isOpen ? <HiX size={24} /> : <HiMenu size={24} />}
+        </button>
+
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.2 }}
+              className="absolute top-full left-0 right-0 mt-2 p-4 rounded-lg bg-black-100/95 backdrop-blur-lg border border-purple/20 md:hidden"
+            >
+              <div className="flex flex-col space-y-4">
+                {navItems.map((navItem: any, idx: number) => (
+                  <button
+                    key={`mobile-link=${idx}`}
+                    onClick={() => scrollToSection(navItem.link.replace('#', ''))}
+                    className="text-neutral-50 hover:text-purple transition-colors duration-300 text-sm font-medium py-2 text-left"
+                  >
+                    {navItem.name}
+                  </button>
+                ))}
+                <a
+                  href="https://drive.google.com/file/d/1NIY-4JpkFc5nZP47hcC2-4b2KQpy2T6P/view?usp=sharing"
+                  target="_blank"
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-purple/10 hover:bg-purple/20 text-purple transition-all duration-300 w-fit"
+                >
+                  <FaDownload className="w-4 h-4" />
+                  <span className="text-sm font-medium">Resume</span>
+                </a>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.div>
     </AnimatePresence>
   );
