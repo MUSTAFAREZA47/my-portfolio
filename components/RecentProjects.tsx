@@ -1,6 +1,7 @@
 "use client";
 
 import { FaLocationArrow } from "react-icons/fa6";
+import Image from "next/image";
 
 import { projects } from "@/data";
 import { PinContainer } from "./ui/Pin";
@@ -26,9 +27,11 @@ const RecentProjects = () => {
                               <div className="relative">
                                   <div className="absolute inset-0 bg-gradient-to-r from-purple/20 to-blue/20 rounded-3xl" />
                               </div>
-                              <img
+                              <Image
                                   src={item.img}
                                   alt="cover"
+                                  width={500}
+                                  height={300}
                                   className="z-10 absolute bottom-0"
                               />
                           </div>

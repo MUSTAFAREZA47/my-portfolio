@@ -68,7 +68,7 @@ const About = () => {
                                 href="#contact"
                                 className="inline-flex items-center gap-2 bg-purple/10 hover:bg-purple/20 text-purple px-6 py-3 rounded-full transition-all duration-300"
                             >
-                                Let's Connect
+                                Let&apos;s Connect
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
