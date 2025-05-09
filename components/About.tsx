@@ -24,7 +24,7 @@ const About = () => {
                         <div className="absolute inset-0 bg-gradient-to-br from-purple/20 to-purple/5 rounded-2xl transform rotate-3" />
                         <div className="relative w-full h-full rounded-2xl overflow-hidden border border-purple/20">
                             <Image
-                                src="/ahmed.jpg" // Replace with your photo path
+                                src="/hero-image.png" // Replace with your photo path
                                 alt="Ahmed Reza"
                                 fill
                                 className="object-cover"

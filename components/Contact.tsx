@@ -70,7 +70,7 @@ const Contact = () => {
         {/* <div className="absolute inset-0 bg-gradient-to-b from-black-100/10 via-black-100/50 to-black-100" /> */}
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8 relative">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -79,7 +79,10 @@ const Contact = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-white mb-4">Get in Touch</h2>
+          <h1 className="heading">
+              Get In{' '}
+              <span className="text-purple">Touch</span>
+          </h1>
           <p className="text-white/60 max-w-2xl mx-auto">
             I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
           </p>

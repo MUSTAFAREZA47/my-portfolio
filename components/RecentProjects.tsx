@@ -23,11 +23,8 @@ const RecentProjects = () => {
                         
                       >
                           <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
-                              <div
-                                  className="relative w-full h-full overflow-hidden lg:rounded-3xl"
-                                  style={{ backgroundColor: '#13162D' }}
-                              >
-                                  <img src="/bg.png" alt="bgimg" />
+                              <div className="relative">
+                                  <div className="absolute inset-0 bg-gradient-to-r from-purple/20 to-blue/20 rounded-3xl" />
                               </div>
                               <img
                                   src={item.img}
