@@ -45,7 +45,7 @@ const About = () => {
                         </h2>
                         
                         <p className="text-white/80 text-lg leading-relaxed">
-                            I'm a passionate MERN Stack Developer with a strong foundation in building scalable and performant web applications. My journey in web development has equipped me with expertise in both frontend and backend technologies, allowing me to create seamless, full-stack solutions.
+                            I&apos;m a passionate MERN Stack Developer with a strong foundation in building scalable and performant web applications. My journey in web development has equipped me with expertise in both frontend and backend technologies, allowing me to create seamless, full-stack solutions.
                         </p>
 
                         <div className="grid grid-cols-2 gap-4 mt-4">

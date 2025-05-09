@@ -47,7 +47,7 @@ const PrivacyPolicy = () => {
           <section>
             <h2 className="text-2xl font-semibold text-white mb-4">1. Introduction</h2>
             <p className="mb-4">
-              Welcome to Ahmed Reza's portfolio website. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website.
+              Welcome to Ahmed Reza&apos;s portfolio website. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website.
             </p>
             <p>
               We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website and tell you about your privacy rights.

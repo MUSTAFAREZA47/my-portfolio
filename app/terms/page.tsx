@@ -47,7 +47,7 @@ const TermsOfService = () => {
           <section>
             <h2 className="text-2xl font-semibold text-white mb-4">1. Agreement to Terms</h2>
             <p className="mb-4">
-              By accessing and using Ahmed Reza's portfolio website, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing this site.
+              By accessing and using Ahmed Reza&apos;s portfolio website, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing this site.
             </p>
             <p>
               The materials contained in this website are protected by applicable copyright and trademark law.
@@ -57,7 +57,7 @@ const TermsOfService = () => {
           <section>
             <h2 className="text-2xl font-semibold text-white mb-4">2. Use License</h2>
             <p className="mb-4">
-              Permission is granted to temporarily view the materials (information or software) on Ahmed Reza's portfolio website for personal, non-commercial transitory viewing only.
+              Permission is granted to temporarily view the materials (information or software) on Ahmed Reza&apos;s portfolio website for personal, non-commercial transitory viewing only.
             </p>
             <p className="mb-4">This is the grant of a license, not a transfer of title, and under this license you may not:</p>
             <ul className="list-disc pl-6 space-y-2">
@@ -72,7 +72,7 @@ const TermsOfService = () => {
           <section>
             <h2 className="text-2xl font-semibold text-white mb-4">3. Disclaimer</h2>
             <p className="mb-4">
-              The materials on Ahmed Reza's portfolio website are provided on an 'as is' basis. Ahmed Reza makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation:
+              The materials on Ahmed Reza&apos;s portfolio website are provided on an &apos;as is&apos; basis. Ahmed Reza makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation:
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li>Implied warranties of merchantability</li>
@@ -92,14 +92,14 @@ const TermsOfService = () => {
           <section>
             <h2 className="text-2xl font-semibold text-white mb-4">5. Accuracy of Materials</h2>
             <p>
-              The materials appearing on Ahmed Reza's portfolio website could include technical, typographical, or photographic errors. Ahmed Reza does not warrant that any of the materials on the website are accurate, complete, or current. Ahmed Reza may make changes to the materials contained on the website at any time without notice.
+              The materials appearing on Ahmed Reza&apos;s portfolio website could include technical, typographical, or photographic errors. Ahmed Reza does not warrant that any of the materials on the website are accurate, complete, or current. Ahmed Reza may make changes to the materials contained on the website at any time without notice.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-semibold text-white mb-4">6. Links</h2>
             <p className="mb-4">
-              Ahmed Reza has not reviewed all of the sites linked to the website and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by Ahmed Reza of the site. Use of any such linked website is at the user's own risk.
+              Ahmed Reza has not reviewed all of the sites linked to the website and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by Ahmed Reza of the site. Use of any such linked website is at the user&apos;s own risk.
             </p>
           </section>
 

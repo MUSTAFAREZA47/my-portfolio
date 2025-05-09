@@ -112,9 +112,9 @@ const Footer = () => {
 
           {/* Contact Section */}
           <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Let's Connect</h3>
+            <h3 className="text-lg font-semibold text-white mb-4">Let&apos;s Connect</h3>
             <p className="text-white/60 text-sm mb-4">
-              Have a project in mind? Let's discuss how we can work together.
+              Have a project in mind? Let&apos;s discuss how we can work together.
             </p>
             <motion.div 
               className="inline-block mx-auto md:mx-0"
