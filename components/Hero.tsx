@@ -65,15 +65,15 @@ const Hero = () => {
             <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-6 lg:px-8 max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] mx-auto">
                 {/* Main Heading with Text Effect */}
                 <TextGenerateEffect
-                    words="Building Scalable & Performant Web Applications"
+                    words="Build Scalable And Performant Web & Mobile Applications"
                     className="text-[32px] sm:text-[36px] md:text-5xl lg:text-6xl font-bold"
                 />
 
                 {/* Subtext */}
                 <p className="mt-4 text-sm sm:text-lg md:text-xl lg:text-2xl text-gray-300 tracking-wide">
                     Hi! I&apos;m&nbsp;
-                    <span className="font-bold text-teal-400">Ahmed</span>, a
-                    <span className="text-teal-400"> MERN Stack Developer</span>&nbsp;
+                    <span className="text-purple">Ahmed</span>, a
+                    <span className="text-purple"> MERN Stack Developer</span>&nbsp;
                     dedicated to crafting high-performance, user-friendly, and
                     modern web experiences.
                 </p>
