@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaBehance, FaEnvelope, FaMapMarkerAlt, FaPhone, FaWhatsapp } from "react-icons/fa";
 import MagicButton from "./MagicButton";
+import { FaFacebook } from "react-icons/fa6";
 
 const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
@@ -46,6 +47,11 @@ const Contact = () => {
       icon: <FaBehance className="w-6 h-6" />,
       title: "Behance",
       link: "https://www.behance.net/mustafareza47"
+    },
+        {
+      icon: <FaFacebook className="w-6 h-6" />,
+      title: "Facebook",
+      link: "https://www.facebook.com/ahmed.reza.572078" 
     },
     {
       icon: <FaWhatsapp className="w-6 h-6" />,

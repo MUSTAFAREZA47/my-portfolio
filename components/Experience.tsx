@@ -68,7 +68,7 @@ const Experience = () => {
                 Technical <span className="text-purple">Skills</span>
             </h1>
 
-            <div className="w-full mt-12 grid lg:grid-cols-2 grid-cols-1 gap-8">
+            <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8 grid lg:grid-cols-2 grid-cols-1 gap-8">
                 {skillCategories.map((category, index) => (
                     <motion.div
                         key={category.title}

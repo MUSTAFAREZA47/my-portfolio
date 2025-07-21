@@ -59,13 +59,13 @@ const Hero = () => {
             <FloatingIcon src="/android.svg" alt="Android" className="lg:top-1/4 lg:left-[120px] top-[200px] left-1/4" />
             <FloatingIcon src="/apple.svg" alt="iOS" className="lg:top-1/3 lg:right-[150px] top-1/4 right-1/4 z-10" />
             <FloatingIcon src="/python.png" alt="Web" className="lg:bottom-[50px] bottom-[100px] lg:left-1/3 left-1/4" />
-            <FloatingIcon src="/graphic.svg" alt="Graphic Design" className="lg:bottom-1/4 bottom-[200px] lg:right-1/4 right-1/4" />
+            <FloatingIcon src="/graphic.svg" alt="Graphic Design" className="lg:bottom-1 bottom-[200px] lg:right-1/4 right-1/4" />
 
             {/* Hero Content */}
             <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-6 lg:px-8 max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] mx-auto">
                 {/* Main Heading with Text Effect */}
                 <TextGenerateEffect
-                    words="Build Scalable And Performant Web & Mobile Applications"
+                    words="Build Scalable And Performant Web & Mobile Apps"
                     className="text-[32px] sm:text-[36px] md:text-5xl lg:text-6xl font-bold"
                 />
 
@@ -73,9 +73,9 @@ const Hero = () => {
                 <p className="mt-4 text-sm sm:text-lg md:text-xl lg:text-2xl text-gray-300 tracking-wide">
                     Hi! I&apos;m&nbsp;
                     <span className="text-purple">Ahmed</span>, a
-                    <span className="text-purple"> MERN Stack Developer</span>&nbsp;
+                    <span className="text-purple"> Developer</span>&nbsp;
                     dedicated to crafting high-performance, user-friendly, and
-                    modern web experiences.
+                    modern Web & Mobile applications.
                 </p>
 
                 {/* CTA Button */}

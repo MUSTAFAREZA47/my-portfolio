@@ -41,11 +41,14 @@ const About = () => {
                         className="flex flex-col gap-6"
                     >
                         <h2 className="text-3xl md:text-4xl font-bold text-white">
-                            MERN Stack Developer
+                            Web & Mobile Developer
                         </h2>
                         
                         <p className="text-white/80 text-lg leading-relaxed">
-                            I&apos;m a passionate MERN Stack Developer with a strong foundation in building scalable and performant web applications. My journey in web development has equipped me with expertise in both frontend and backend technologies, allowing me to create seamless, full-stack solutions.
+                            I&apos;m a passionate Developer with a solid foundation in building scalable Mobile and Web Applications.
+                        </p>
+                        <p className="text-white/80 text-lg leading-relaxed">
+                        With over two years of prior experience as a Graphic Designer for global brands like Coursera, ETS, GRE, TOEFL, and STOMAFIT and other renowned brands, I bring a unique blend of technical expertise and design sensibility — creating full-stack solutions that are both functional and visually polished.
                         </p>
 
                         <div className="grid grid-cols-2 gap-4 mt-4">
